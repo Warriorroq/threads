@@ -10,6 +10,15 @@ namespace treads
     {
         static void Main(string[] args)
         {
+            List<Team> group = new List<Team>(); 
+
+            while (true)
+            {
+                int command = 0;
+                int.TryParse(Console.ReadLine().ToString(),out command);
+                Console.Clear();                
+                
+            }
         }
     }
 }
