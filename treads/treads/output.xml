@@ -1,9 +1,35 @@
 <?xml version="1.0"?>
-<Team xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <name>XOJVIPWKM</name>
-  <wins>2</wins>
-  <loses>18</loses>
-  <draws>14</draws>
-  <lastGameTime>1.93333328</lastGameTime>
-  <totalGames>34</totalGames>
-</Team>
+<ArrayOfTeam xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Team>
+    <name>XQGGNGXF</name>
+    <wins>12</wins>
+    <loses>19</loses>
+    <draws>14</draws>
+    <lastGameTime>0.983333349</lastGameTime>
+    <totalGames>45</totalGames>
+  </Team>
+  <Team>
+    <name>XMOCHXDUP</name>
+    <wins>14</wins>
+    <loses>5</loses>
+    <draws>16</draws>
+    <lastGameTime>0.8333333</lastGameTime>
+    <totalGames>35</totalGames>
+  </Team>
+  <Team>
+    <name>RYTACT</name>
+    <wins>17</wins>
+    <loses>18</loses>
+    <draws>13</draws>
+    <lastGameTime>1.48333335</lastGameTime>
+    <totalGames>48</totalGames>
+  </Team>
+  <Team>
+    <name>TCUGMQ</name>
+    <wins>17</wins>
+    <loses>18</loses>
+    <draws>17</draws>
+    <lastGameTime>0.45</lastGameTime>
+    <totalGames>52</totalGames>
+  </Team>
+</ArrayOfTeam>

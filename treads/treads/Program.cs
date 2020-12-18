@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace treads
@@ -15,23 +16,18 @@ namespace treads
         static void Main(string[] args)
         {
             List<Team> group = new List<Team>();
-            
-            if(false)
+            XmlSerializer formatter = new XmlSerializer(typeof(Team[]));
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
-                XmlSerializer xmlSerialaizer = new XmlSerializer(typeof(Team));
-                Team bludaToRead = new Team();
-                FileStream fr = new FileStream(path, FileMode.Open);
-                bludaToRead = (Team)xmlSerialaizer.Deserialize(fr);
-                group.Add(bludaToRead);
-                fr.Close();
+                Team[] grp = (Team[])formatter.Deserialize(fs);
+                group.AddRange(grp);
+                foreach (Team p in grp)
+                    p.WriteDownInfo();
             }
-
-            foreach (Team t in group)
-                t.WriteDownInfo();
 
             while (true)
             {
-                Console.WriteLine("1 - create random : 2 - create yours : 3 - save table :-num - show team info : 4 - end ");
+                Console.WriteLine("1 - create random : 2 - create yours : 3 - save table :-num - show team info : 4 - end : 5 - clear");
                 int command = 0;
                 int.TryParse(Console.ReadLine().ToString(),out command);
                 Console.Clear();
@@ -49,12 +45,13 @@ namespace treads
                 }
                 else if (command == 3)
                 {
-                    XmlSerializer xmlSerialaizer = new XmlSerializer(typeof(Team));
-                    FileStream fw = new FileStream(path, FileMode.Open);
-                    foreach (Team t in group)
-                        xmlSerialaizer.Serialize(fw, t);
-                    //xmlSerialaizer.Serialize(fw, group[0]);
-                    fw.Close();
+                    using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                    {
+                        Team[] teams = new Team[group.Count];
+                        for (int i = 0; i < group.Count; i++)
+                            teams[i] = group[i];
+                        formatter.Serialize(fs, teams);
+                    }
                 }
                 else if (command == 4)
                     break;
