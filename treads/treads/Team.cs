@@ -35,7 +35,18 @@ namespace treads
         }
         public void WriteDownInfo()
         {
+            Console.WriteLine("name: " + name +
+                "\n wins: " + wins.ToString() + " loses: " + loses.ToString() + " draws:" + draws.ToString() +
+                "\n last played time: " + (int)lastGameTime + " hour " + lastGameTime%1*60 + " mins");
+        }
+        public static bool operator ==(Team op1, Team op2)
+        {
+            return op1.Equals(op2);
+        }
 
+        public static bool operator !=(Team op1, Team op2)
+        {
+            return !op1.Equals(op2);
         }
     }
 }
