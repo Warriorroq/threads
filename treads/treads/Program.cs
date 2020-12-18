@@ -16,7 +16,7 @@ namespace treads
         {
             List<Team> group = new List<Team>();
             
-            if(true)
+            if(false)
             {
                 XmlSerializer xmlSerialaizer = new XmlSerializer(typeof(Team));
                 Team bludaToRead = new Team();
@@ -50,9 +50,10 @@ namespace treads
                 else if (command == 3)
                 {
                     XmlSerializer xmlSerialaizer = new XmlSerializer(typeof(Team));
-                    FileStream fw = new FileStream(path, FileMode.Create);
-                    //foreach (Team t in group)
-                    xmlSerialaizer.Serialize(fw, group[0]);
+                    FileStream fw = new FileStream(path, FileMode.Open);
+                    foreach (Team t in group)
+                        xmlSerialaizer.Serialize(fw, t);
+                    //xmlSerialaizer.Serialize(fw, group[0]);
                     fw.Close();
                 }
                 else if (command == 4)
