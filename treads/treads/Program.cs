@@ -14,26 +14,26 @@ namespace treads
         static void Main(string[] args)
         {
             List<Team> group = new List<Team>();
-
-            //reading
-            XmlDocument xDoc = new XmlDocument();
-            xDoc.Load("../../output.xml");
-            XmlElement xRoot = xDoc.DocumentElement;
-            foreach (XmlElement xnode in xRoot)
+            
+            if(false)
             {
-                Team t = new Team();
-                XmlNode attr = xnode.Attributes.GetNamedItem("http://www.w3.org/2001/XMLSchema-instance");
-                if (attr != null)
-                    t.name = attr.Value;
-
-                foreach (XmlNode childnode in xnode.ChildNodes)
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load("../../output.xml");
+                XmlElement xRoot = xDoc.DocumentElement;
+                foreach (XmlElement xnode in xRoot)
                 {
+                    Team t = new Team();
+                    XmlNode attr = xnode.Attributes.GetNamedItem("name");
+                    if (attr != null)
+                        t.name = attr.Value;
 
-                }
-                group.Add(t);
+                    foreach (XmlNode childnode in xnode.ChildNodes)
+                    {
+                        //if (childnode.Name == "")
+                    }
+                    group.Add(t);
+                }                
             }
-            //end 
-
             while (true)
             {
                 Console.WriteLine("1 - create random : 2 - create yours : 3 - save table :-num - show team info : 4 - end ");
