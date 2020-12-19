@@ -32,15 +32,13 @@ namespace treads
                 Console.Clear();
                 if (command == 1)
                 {
-                    Team t = Fabric.CreateRandomTeam();
-                    group.Add(t);
-                    t.WriteDownInfo();
+                    group.Add(Fabric.CreateRandomTeam());
+                    group.Last().WriteDownInfo();
                 }
                 else if (command == 2)
                 {
-                    Team t = Fabric.CreateTeam();
-                    group.Add(t);
-                    t.WriteDownInfo();
+                    group.Add(Fabric.CreateTeam());
+                    group.Last().WriteDownInfo();
                 }
                 else if (command == 3)
                 {
