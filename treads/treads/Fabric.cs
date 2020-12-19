@@ -11,6 +11,7 @@ namespace treads
         private static Random rand = new Random();
         public static Team CreateTeam()
         {
+            Console.WriteLine("name:");
             string name = Console.ReadLine();
             int wins = InputValue("pobedi");
             int loses = InputValue("poragenia");
@@ -20,7 +21,6 @@ namespace treads
         }
         public static Team CreateRandomTeam()
         {
-            Console.WriteLine("name");
             string name = CreateName();
             int wins = rand.Next(0, 20);
             int loses = rand.Next(0, 20);

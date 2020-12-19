@@ -32,4 +32,12 @@
     <lastGameTime>0.45</lastGameTime>
     <totalGames>52</totalGames>
   </Team>
+  <Team>
+    <name>Console.WriteLine("name:");&#x1A;</name>
+    <wins>12</wins>
+    <loses>12</loses>
+    <draws>12</draws>
+    <lastGameTime>20.5666676</lastGameTime>
+    <totalGames>36</totalGames>
+  </Team>
 </ArrayOfTeam>
