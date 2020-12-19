@@ -16,10 +16,10 @@ namespace treads
         static void Main(string[] args)
         {
             List<Team> group = new List<Team>();
-            XmlSerializer formatter = new XmlSerializer(typeof(Team[]));
+            XmlSerializer formatter = new XmlSerializer(typeof(List<Team>));
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
-                group.AddRange((Team[])formatter.Deserialize(fs));
+                group = (List<Team>)formatter.Deserialize(fs);
                 foreach (Team p in group)
                     p.WriteDownInfo();
             }
@@ -44,12 +44,7 @@ namespace treads
                 {
                     using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                     {
-                        Team[] teams = new Team[group.Count];
-
-                        for (int i = 0; i < group.Count; i++)
-                            teams[i] = group[i];
-
-                        formatter.Serialize(fs, teams);
+                        formatter.Serialize(fs, group);
                     }
                 }
                 else if (command == 4)

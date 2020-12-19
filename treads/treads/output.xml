@@ -33,11 +33,27 @@
     <totalGames>52</totalGames>
   </Team>
   <Team>
-    <name>Console.WriteLine("name:");&#x1A;</name>
+    <name>Console.WriteLine("name:");</name>
     <wins>12</wins>
     <loses>12</loses>
     <draws>12</draws>
     <lastGameTime>20.5666676</lastGameTime>
     <totalGames>36</totalGames>
+  </Team>
+  <Team>
+    <name>IWIEDD</name>
+    <wins>1</wins>
+    <loses>3</loses>
+    <draws>11</draws>
+    <lastGameTime>0.516666651</lastGameTime>
+    <totalGames>15</totalGames>
+  </Team>
+  <Team>
+    <name>CPUYI</name>
+    <wins>4</wins>
+    <loses>5</loses>
+    <draws>0</draws>
+    <lastGameTime>1.58333337</lastGameTime>
+    <totalGames>9</totalGames>
   </Team>
 </ArrayOfTeam>
