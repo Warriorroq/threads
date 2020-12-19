@@ -19,9 +19,8 @@ namespace treads
             XmlSerializer formatter = new XmlSerializer(typeof(Team[]));
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
-                Team[] grp = (Team[])formatter.Deserialize(fs);
-                group.AddRange(grp);
-                foreach (Team p in grp)
+                group.AddRange((Team[])formatter.Deserialize(fs));
+                foreach (Team p in group)
                     p.WriteDownInfo();
             }
 
@@ -48,8 +47,10 @@ namespace treads
                     using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
                     {
                         Team[] teams = new Team[group.Count];
+
                         for (int i = 0; i < group.Count; i++)
                             teams[i] = group[i];
+
                         formatter.Serialize(fs, teams);
                     }
                 }
